@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 
@@ -10,19 +10,23 @@ import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 
 const App = () => {
+
+  let [theme, setTheme] = useState(true)
+
+
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} setTheme={setTheme} />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact theme={theme} />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
 
-      <Footer />
+      <Footer theme={theme} setTheme={setTheme} />
     </>
 
   )

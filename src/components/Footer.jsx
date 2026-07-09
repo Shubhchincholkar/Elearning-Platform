@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Footer = () => {
+const Footer = ({ theme, setTheme }) => {
   return (
-    <div className='h-18 w-screen text-white bg-gray-700'>Footer</div>
+    <div className={`h-18 w-screen flex justify-center items-center 
+    ${theme ? "bg-white text-black" : "bg-black text-white"}
+    `} >
+      Footer
+
+    </div >
   )
 }
+
+
 
 export default Footer
