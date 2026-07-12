@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-around gap-12 px-6 md:px-16 py-16 bg-(--color-bg) transition-colors duration-300 h-screen">
       {/* Right column */}
-      <div className="relative w-full max-w-sm h-[420px] flex items-center justify-center">
+      <div className="relative w-full max-w-sm h-105 flex items-center justify-center">
         {/* Blob background */}
         <div className="relative flex items-center justify-center">
           <div

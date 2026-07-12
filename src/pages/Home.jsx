@@ -1,7 +1,11 @@
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-
+import { useState, useEffect } from "react";
 function Home() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    document.title = count === "0" ? "E-Learning" : `(${count}) E-Learning`;
+  }, [count]);
   return (
     <div className="flex items-center justify-around gap-12 px-6 md:px-16 py-16 bg-(--color-bg) transition-colors duration-300 h-screen">
       <div className="max-w-xl">
@@ -17,7 +21,7 @@ function Home() {
         </p>
 
         <div className="mt-8 flex items-center gap-10">
-          <button
+          <button onClick={() => setCount(count + 1)}
             className="px-8 py-3 rounded-full text-white font-medium
             bg-(--color-primary) hover:opacity-90 transition-opacity"
           >
@@ -40,7 +44,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="relative w-full max-w-sm h-[420px] flex items-center justify-center">
+      <div className="relative w-full max-w-sm h-105 flex items-center justify-center">
         <div className="absolute flex items-center justify-center">
           <div
             className="w-120 h-120 rounded-[19%] rotate-6

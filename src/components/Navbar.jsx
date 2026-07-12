@@ -6,7 +6,7 @@ import { LuSun } from "react-icons/lu";
 
 
 function Navbar() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -56,7 +56,7 @@ function Navbar() {
             className="flex items-center justify-center text-(--color-text-muted) ml-4"
             aria-label="Toggle theme"
           >
-            {isDark ? <FiMoon size={26} /> : <LuSun size={26} />}
+            {isDark ?  <LuSun size={26} />:<FiMoon size={26} /> }
           </button>
         </div>
       </div>
