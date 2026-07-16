@@ -1,13 +1,19 @@
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { useState, useEffect } from "react";
+import DotField from "../components/DotField";
 function Home() {
+
   const [count, setCount] = useState(0);
   useEffect(() => {
     document.title = count === "0" ? "E-Learning" : `(${count}) E-Learning`;
   }, [count]);
   return (
-    <div className="flex items-center justify-around gap-12 px-6 md:px-16 py-16 bg-(--color-bg) transition-colors duration-300 h-screen">
+    <div className="relative h-screen overflow-hidden">
+       <div className="absolute inset-0 -z-10">
+      <DotField />
+    </div>
+    <div className="flex items-center justify-around gap-12 px-6 md:px-16 py-16 transition-colors duration-300 h-screen">
       <div className="max-w-xl">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight text-(--color-text)">
           Investing in Knowledge and{" "}
@@ -60,6 +66,7 @@ function Home() {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 }
