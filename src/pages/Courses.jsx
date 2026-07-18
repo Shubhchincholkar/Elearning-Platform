@@ -2,6 +2,7 @@ import React from "react";
 import TiltWrapper from "../components/TiltedCard";
 import BorderGlow from "../components/BorderGlow";
 import GridMotion from "../components/GridMotion";
+import { useNavigate } from "react-router-dom";
 
 export const courses = [
   {
@@ -112,6 +113,7 @@ export const courses = [
 ];
 
 function Courses() {
+  const navigate = useNavigate();
   return (
     <section className="relative overflow-hidden bg-(--color-bg) py-16">
       <div className="relative z-10 px-6 md:px-16">
@@ -177,7 +179,8 @@ function Courses() {
                         </span>
                       </div>
 
-                      <button className="mt-5 w-full py-3 rounded-full bg-(--color-primary) text-white font-semibold hover:opacity-90 transition">
+                      <button onClick={() => navigate(`/courses/${course.id}`)}
+                       className="mt-5 w-full py-3 rounded-full bg-(--color-primary) text-white font-semibold hover:opacity-90 transition">
                         Enroll Now
                       </button>
                     </div>

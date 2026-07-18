@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import CourseDetails from "./components/CourseDetails"
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
 
         {/* Always last */}
         <Route path="*" element={<NotFound />} />
+
+        <Route path="/courses/:id" element={<CourseDetails />} />
       </Routes>
       <Footer />
     </>
